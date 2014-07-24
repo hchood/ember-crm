@@ -12,6 +12,8 @@ App.Router.map(function() {
 
 App.Router.map(function() {
   this.resource('leads', { path: '/' }, function(){
-    this.resource('lead', { path: '/leads/:id' });
+    this.resource('lead', { path: '/leads/:id'}, function(){
+      this.route('edit');
+    });
   });
 });
