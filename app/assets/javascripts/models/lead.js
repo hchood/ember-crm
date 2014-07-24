@@ -4,5 +4,8 @@ App.Lead = DS.Model.extend({
   email: DS.attr('string'),
   phone: DS.attr('string'),
   status: DS.attr('string', { defaultValue: 'new'}),
-  notes: DS.attr('string')
+  notes: DS.attr('string'),
+  fullName: function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }.property('firstName', 'lastName')
 });
